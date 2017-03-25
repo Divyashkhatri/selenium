@@ -1,0 +1,11 @@
+<suite name="Suite" parallel="tests">
+  <test name="Test">
+<parameter name="node" value= "http://rex-PC:4444/wd/hub"/>
+	<parameter name="browser" value="chrome"/>  
+    <classes>
+      <class name="script.ValidLoginLogout"/>
+      <class name="script.InvalidLoginLogout"/>
+      <class name="script.VerifyProductVerion"/>
+    </classes>
+  </test> 
+</suite> 
