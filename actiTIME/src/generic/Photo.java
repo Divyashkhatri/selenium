@@ -8,18 +8,21 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-public class Photo implements AutoConst {
+public abstract class Photo implements AutoConst {
 	public static void getScreenShot(WebDriver driver)
 	{
-SimpleDateFormat f=new SimpleDateFormat("hh-mm-ss-DD-MM-YYYY");
-			String datetime = f.format(new Date());
-			TakesScreenshot s=(TakesScreenshot)driver;
-			File srcFile = s.getScreenshotAs(OutputType.FILE);
-			File destFile=new File(AutoConst.FOLDER_PATH+datetime+".png");
-			try{
-				FileUtils.copyFile(srcFile,destFile);
-			}catch(Exception e){
-				
-			}		
+		SimpleDateFormat f=new SimpleDateFormat("hh-mm-ss-d-MM-YYYY");
+		String datetime = f.format(new Date());
+		TakesScreenshot s=(TakesScreenshot)driver;
+		File srcFile = s.getScreenshotAs(OutputType.FILE);
+		File destFile=new File(AutoConst.FOLDER_PATH+datetime+".png");
+		try
+		{
+			FileUtils.copyFile(srcFile,destFile);
+		}
+		catch(Exception e)
+		{
+
+		}		
 	}
 }

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-public class BasePage {
+public abstract class BasePage {
 		public WebDriver driver;
 		public WebDriverWait wait;
 		public BasePage(WebDriver driver)
@@ -30,10 +30,14 @@ public class BasePage {
 	}	
 	public void verifyElementIsPresent(WebElement element){
 		try{
+			Thread.sleep(2000);
 		wait.until(ExpectedConditions.visibilityOf(element));
 		Reporter.log("Element is present",true);
 		}catch(TimeoutException e){
 			Reporter.log("Element is not present",true);	
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 

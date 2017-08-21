@@ -1,10 +1,13 @@
 package generic;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class Excel {
+public abstract class Excel {
 	public static String getCellValue(String path,String sheet,int r,int c){
 		String v="";	
 		try{
@@ -18,6 +21,17 @@ public class Excel {
 		return v;
 	}
 	
+	public static boolean setCellValue(String path,String sheet,int row,int column,String value){
+		System.out.println("set");
+		try{
+			
+		}
+		catch(Exception e){
+			
+		}
+		
+		return true;
+	}
 	
 	public static int getRowCount(String path,String sheet){
 		int rc=0;
