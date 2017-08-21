@@ -9,9 +9,9 @@ public class VerifyProductVersion extends BaseTest{
 	@Test
 	public void testVerifyProductVerion(){
 	
-		String un=Excel.getCellValue(INPUT_PATH,"ValidLoginLogout", 1, 0);
-		String pw=Excel.getCellValue(INPUT_PATH,"ValidLoginLogout", 1, 1);
-		String productVersion=Excel.getCellValue(INPUT_PATH,"ValidLoginLogout", 1, 2);
+		String un=Excel.getCellValue(INPUT_PATH,"VerifyProductVersion", 1, 0);
+		String pw=Excel.getCellValue(INPUT_PATH,"VerifyProductVersion", 1, 1);
+		String productVersion=Excel.getCellValue(INPUT_PATH,"VerifyProductVersion", 1, 2);
 	LoginPage l=new LoginPage(driver);
 	l.setUsername(un);
 	l.setPassword(pw);
